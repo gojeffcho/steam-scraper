@@ -1,2 +1,9 @@
+output/
+output1/
+temp/
+
+.scrapy/
+reviews.jl
+
 *.pyc
 junk/*

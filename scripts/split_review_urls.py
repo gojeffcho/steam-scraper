@@ -49,7 +49,7 @@ def main():
     blx = blx_nontrivial & blx_has_reviews
 
     urls = df.loc[blx, 'reviews_url'].unique()
-    urls = shuffle(urls)
+    shuffle(urls)
 
     n = len(urls)
     step = int(math.ceil(float(n)/args.pieces))

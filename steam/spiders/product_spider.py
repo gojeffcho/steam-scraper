@@ -26,6 +26,7 @@ def load_product(response):
         loader.add_value('reviews_url', reviews_url)
         loader.add_value('id', id)
 
+
     # Publication details.
     details = response.css('.details_block').extract_first()
     try:
@@ -60,7 +61,9 @@ def load_product(response):
     sentiment = response.css('.game_review_summary').xpath(
         '../*[@itemprop="description"]/text()').extract()
     loader.add_value('sentiment', sentiment)
-    loader.add_css('n_reviews', '.responsive_hidden', re='\(([\d,]+) reviews\)')
+    n_reviews = response.xpath('//meta[@itemprop="reviewCount"]/@content').extract()
+    n_reviews = '0' if len(n_reviews) == 0 else n_reviews[0]
+    loader.add_value('n_reviews', n_reviews)
 
     loader.add_xpath(
         'metascore',
