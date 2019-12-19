@@ -9,7 +9,7 @@ This repository contains code accompanying the *Scraping the Steam Game Store* a
 
 After cloning the repository with
 ```bash
-git clone git@github.com:prncc/steam-scraper.git
+git clone git@github.com:gojeffcho/steam-scraper.git
 ```
 start and activate a Python 3.6+ virtualenv with
 ```bash
